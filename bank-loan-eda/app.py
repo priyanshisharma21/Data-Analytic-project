@@ -16,7 +16,11 @@ apply_chart_theme()
 try:
     df_all = load_clean()
 except FileNotFoundError:
-    st.error("train.csv not found. Put it in the same folder as app.py.")
+    from pathlib import Path
+    here = Path(__file__).resolve().parent
+    st.error("train.csv not found. Put a CSV with 'train' in its name in the same folder as app.py.")
+    st.write("Files next to app.py:", sorted(p.name for p in here.iterdir()))
+    st.write("All CSV files found in the project:", sorted(str(p.relative_to(here)) for p in here.rglob("*.csv")))
     st.stop()
 
 PAGES = {
