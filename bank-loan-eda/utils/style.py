@@ -84,6 +84,16 @@ h3 { font-size: 1.15rem; font-weight: 600; margin-top: 2.2rem; }
 .takeaway { border-left: 3px solid #2a78d6; background: #f1f4f9; padding: .75rem 1rem; margin: 1rem 0 .5rem; color: #1d1f23; line-height: 1.5; max-width: 70ch; }
 .note { color: #7a7973; font-size: .85rem; line-height: 1.45; max-width: 70ch; }
 
+/* ---- Keep text readable even if the viewer's browser or Streamlit is in dark mode ---- */
+[data-testid="stSidebar"] * { color: #0b0b0b !important; }
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] * { color: #52514e !important; }
+[data-testid="stSidebar"] [data-baseweb="select"] > div { background: #fcfcfb !important; border: 1px solid #cfcec6 !important; }
+[data-testid="stSidebar"] [data-baseweb="tag"] { background: #0d366b !important; }
+[data-testid="stSidebar"] [data-baseweb="tag"] * { color: #ffffff !important; }
+[data-testid="stWidgetLabel"] *, [data-testid="stSlider"] * { color: #0b0b0b !important; }
+[data-testid="stMain"] [data-baseweb="select"] > div { background: #fcfcfb !important; border: 1px solid #cfcec6 !important; }
+[data-testid="stMain"] [data-baseweb="select"] * { color: #0b0b0b !important; }
+
 @media (max-width: 640px) {
   .rb-row { grid-template-columns: 1fr 56px; }
   .rb-label { grid-column: 1 / -1; }
